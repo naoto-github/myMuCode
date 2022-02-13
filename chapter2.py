@@ -1,21 +1,58 @@
 # Turtleグラフィックスのライブラリをインポート
 from turtle import *
 
+colormode(255)
+bgcolor("yellow")
+hideturtle()
+
+penup()
+goto(0, 250)
+pendown()
+
+pensize(10)
+color("red")
+right(36)
+forward(300)
+
+pensize(10)
+color("green")
+right(72)
+forward(300)
+
+pensize(10)
+color("blue")
+right(72)
+forward(300)
+
+pensize(10)
+color("green")
+right(72)
+forward(300)
+
+pensize(10)
+color("red")
+right(72)
+forward(300)
+
+"""
 penup()
 goto(-200, 0)
 pendown()
 
-color(1, 0, 0)
+colormode(255) # 0〜255の範囲で指定
+
+color(255, 0, 0)
 forward(100)
 
-color(0, 1, 0)
+color(0, 255, 0)
 forward(100)
 
-color(0, 0, 1)
+color(0, 0, 255)
 forward(100)
 
-color(1, 0.7, 0.8)
+color(234, 145, 152)
 forward(100)
+"""
 
 """ 例題1
 penup()
