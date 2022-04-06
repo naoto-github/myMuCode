@@ -1,7 +1,9 @@
 # Turtleグラフィックスのライブラリをインポート
 from turtle import *
 
-colormode(255)
+#colormode(255)
+#speed(0)
+
 bgcolor("yellow")
 hideturtle()
 
