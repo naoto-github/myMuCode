@@ -1,6 +1,58 @@
 WIDTH = 640 # ウィンドウの幅
 HEIGHT = 480 # ウィンドウの高さ
 
+flg = False
+
+x1 = 320
+y1 = 240
+speed1 = 5
+
+x2 = 320
+y2 = 240
+speed2 = 5
+
+def draw():
+    screen.fill("white")
+    screen.draw.filled_circle((x1, y1), 10, "red")
+    screen.draw.filled_circle((x2, y2), 10, "blue")
+
+
+def update():
+    global x1, y1, speed1
+    global x2, y2, speed2
+
+    if flg:
+        x1 = x1 + speed1
+        if x1 >= WIDTH or x1 <= 0:
+            speed1 = speed1 * -1
+
+        y2 = y2 + speed2
+        if y2 >= HEIGHT or y2 <= 0:
+            speed2 = speed2 * -1
+
+def on_key_down(key):
+    global flg
+    if key == keys.SPACE:
+        flg = True
+
+
+"""
+def update():
+    global x, y, speed
+    x = x + speed
+
+    if x >= WIDTH or x <= 0:
+        speed = speed * -1
+"""
+
+"""
+# 60fpsで更新
+def update():
+    global x, y
+    x = x + 1
+"""
+
+"""
 def draw():
     # 背景色が白のスクリーン
     screen.fill("white")
@@ -26,3 +78,4 @@ def draw():
     # 左上の座標(400, 300)，フォントサイズ32，黒色の文字列「あいう」を描く
     # IPAexフォント https://moji.or.jp/ipafont/
     screen.draw.text("あいう", (400, 300), fontname="ipaexg", color="black", fontsize=32)
+"""
