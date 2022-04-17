@@ -4,7 +4,7 @@ HEIGHT = 480 # ウィンドウの高さ
 player = Actor("player_idle", (320, 240))
 
 def draw():
-    screen.fill("white")
+    screen.fill("white") # screen.fill((255, 255, 255))でもOK
     player.draw()
 
 walk_images = ["player_walk1", "player_walk2"]

@@ -1,6 +1,38 @@
+from random import *
+
 WIDTH = 640 # ウィンドウの幅
 HEIGHT = 480 # ウィンドウの高さ
 
+def draw():
+    screen.fill("white")
+
+    screen.blit("tree1", (0, 0))
+    screen.blit("tree2", (300, 0))
+
+    for i in range(10):
+        x = randint(100, 240)
+        y = randint(60, 200)
+        screen.draw.filled_circle((x, y), 10, (255, 0, 0))
+        screen.draw.line((x, y-5), (x, y-15), (0, 0, 0))
+
+    for i in range(10):
+        x = randint(400, 540)
+        y = randint(60, 200)
+        screen.draw.filled_circle((x, y), 10, (255, 255, 0))
+        screen.draw.line((x, y-5), (x, y-15), (0, 0, 0))
+
+"""
+dog = Actor("dog", (100, 100))
+
+def draw():
+    screen.fill("white")
+    #screen.blit(images.dog, (120, 200))
+    dog.draw()
+    animate(dog, pos=(300, 300))
+"""
+
+
+"""
 flg = False
 
 x1 = 320
@@ -10,13 +42,16 @@ speed1 = 5
 x2 = 320
 y2 = 240
 speed2 = 5
+"""
 
+"""
 def draw():
     screen.fill("white")
     screen.draw.filled_circle((x1, y1), 10, "red")
     screen.draw.filled_circle((x2, y2), 10, "blue")
+"""
 
-
+"""
 def update():
     global x1, y1, speed1
     global x2, y2, speed2
@@ -34,7 +69,7 @@ def on_key_down(key):
     global flg
     if key == keys.SPACE:
         flg = True
-
+"""
 
 """
 def update():
@@ -73,9 +108,9 @@ def draw():
     screen.draw.filled_circle((300, 300), 50, "yellow")
 
     # 左上の座標(400, 150)，フォントサイズ24，黒色の文字列「ABC」を描く
-    screen.draw.text("ABC", (400, 150), color="black")
+    #screen.draw.text("ABC", (400, 150), color="black")
 
     # 左上の座標(400, 300)，フォントサイズ32，黒色の文字列「あいう」を描く
     # IPAexフォント https://moji.or.jp/ipafont/
-    screen.draw.text("あいう", (400, 300), fontname="ipaexg", color="black", fontsize=32)
+    #screen.draw.text("あいう", (400, 300), fontname="ipaexg", color="black", fontsize=32)
 """
