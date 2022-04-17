@@ -1,28 +1,35 @@
 WIDTH = 640 # ウィンドウの幅
 HEIGHT = 480 # ウィンドウの高さ
 
-player = Actor("player_idle", (320, 240))
+x = 320
+y = 0
+speed = 1
+
+x2 = 160
+y2 = 0
+speed2 = 1
+
+flg = False
 
 def draw():
     screen.fill("white") # screen.fill((255, 255, 255))でもOK
-    player.draw()
 
-walk_images = ["player_walk1", "player_walk2"]
-walk_counter = 0
-def walk(dx, dy):
-    global walk_counter
-    player.image = walk_images[walk_counter]
-    player.x += dx
-    player.y += dy
-    walk_counter += 1
-    walk_counter = walk_counter % len(walk_images)
+    # 赤いリンゴ
+    screen.draw.filled_circle((x, y), 10, "red")
+    screen.draw.line((x, y-5), (x, y-15), "black")
+
+    # 青いリンゴ
+    screen.draw.filled_circle((x2, y2), 10, "blue")
+    screen.draw.line((x2, y2-5), (x2, y2-15), "black")
 
 def update():
-    if keyboard.right:
-        walk(10, 0)
-    elif keyboard.left:
-        walk(-10, 0)
-    elif keyboard.up:
-        walk(0, -10)
-    elif keyboard.down:
-        walk(0, 10)
+    global x, y, speed
+    global x2, y2, speed2
+    if flg:
+        y = y + speed
+        y2 = y2 + speed2
+
+def on_mouse_down():
+    global flg
+    flg = True
+
