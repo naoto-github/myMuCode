@@ -121,13 +121,11 @@ for i in range(100):
     pendown()
     if position()[0] > 0 and position()[1] > 0:
         color("red")
-        dot(10)
     elif position()[0] > 0 and position()[1] <= 0:
         color("blue")
-        dot(10)
     elif position()[0] <= 0 and position()[1] <= 0:
         color("green")
-        dot(10)
     elif position()[0] <= 0 and position()[1] > 0:
         color("pink")
-        dot(10)
+
+    dot(10)

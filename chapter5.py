@@ -105,6 +105,9 @@ drawPolygon(-100, 100, 4)
 drawPolygon(-100, 173, 6)
 """
 
+"""
+speed(0)
+
 def drawPolygon(x, y, vertex, length):
 
   penup()
@@ -120,5 +123,26 @@ def drawPolygon(x, y, vertex, length):
 
 vertex = input("頂点数を入力してください >>")
 vertex = int(vertex)
-speed(0)
-drawPolygon(0, 150, vertex, 10)
+
+length = input("辺の長さを入力してください >>")
+length = int(length)
+
+drawPolygon(0, 150, vertex, length)
+"""
+
+import numpy as np
+
+vertex = 50
+radius = 200
+
+penup()
+goto(radius, 0)
+pendown()
+
+for i in range(vertex):
+    angle = (360 / vertex) * (i+1)
+    x = radius * np.cos(np.radians(angle))
+    y = radius * np.sin(np.radians(angle))
+    goto(x, y)
+
+
