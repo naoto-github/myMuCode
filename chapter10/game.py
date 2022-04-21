@@ -23,7 +23,6 @@ def catch():
 
 class Apple:
 
-	# コンストラクタ（引数で値を設定）
     def __init__(self, x, y, speed, color):
         self.x = x
         self.y = y
@@ -39,7 +38,7 @@ class Apple:
         self.speed = self.speed + 0.05
 
 x = randint(0, 640)
-apple = Apple(x, 0, 1, "green") #  緑色のリンゴ
+apple = Apple(x, 0, 1, "green")
 
 def draw():
     screen.fill("white")

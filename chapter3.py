@@ -1,13 +1,45 @@
 # Turtleグラフィックスのライブラリをインポート
 from turtle import *
 
+import numpy as np
+
+print(np.radians(90)) # ラジアン角 -> 1.57
+print(np.cos(np.radians(90))) # 余弦 -> 0.0
+print(np.sin(np.radians(90))) # 正弦 -> 1.0
+
+print(np.radians(180)) # ラジアン角 -> 3.14
+print(np.cos(np.radians(180))) # 余弦 -> -1.0
+print(np.sin(np.radians(180))) # 正弦 -> 0.0
+
 speed(0)
 
+"""
+xlist = [300, -300, -300, 300, 400, 300]
+ylist = [200, 200, -200, -200, 0, 200]
+
+for index in range(len(xlist)):
+	goto(xlist[index], ylist[index]+100)
+"""
+
+
+
+penup()
+goto(200, 0)
+pendown()
+
+radius = 200
+for angle in range(360):
+    x = radius * np.cos(np.radians(angle))
+    y = radius * np.sin(np.radians(angle))
+    goto(x, y)
+
+"""
 distance = 10
 for index in range(50):
     distance = distance + 10
     forward(distance)
     right(90)
+"""
 
 """
 # リスト
