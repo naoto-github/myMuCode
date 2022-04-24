@@ -3,6 +3,53 @@ from random import *
 WIDTH = 640
 HEIGHT = 480
 
+score = 0
+
+player = Actor("player_stand", midbottom=(WIDTH/2, HEIGHT))
+
+item_list = []
+
+def draw():
+    screen.fill("white")
+    screen.draw.text("SCORE: " + str(score), (10, 10), color="black")
+    player.draw()
+
+    for item in item_list:
+        item.draw()
+
+def update():
+    global score
+
+    if keyboard.right:
+        player.x = player.x + 5
+        player.image = "player_walk1"
+    elif keyboard.left:
+        player.x = player.x - 5
+        player.image = "player_walk2"
+    elif keyboard.up:
+        player.image = "player_hold1"
+
+        for item in item_list:
+            if(player.colliderect(item)):
+                score += 10
+                item.x = -9999
+                item.y = -9999
+    else:
+        player.image = "player_stand"
+
+    for item in item_list:
+
+        if item.y >= HEIGHT - 10:
+            item.image = "broken"
+        else:
+            item.y = item.y + 1
+
+def on_mouse_down(pos):
+    item = Actor("item.png", center=(pos[0], 0))
+    item_list.append(item)
+
+
+"""
 player = Actor("player_stand", midbottom=(320, 480))
 walk_speed = 5
 jump_speed = [1, 2, 3, 4, 5, 4, 3, 2, 1]
@@ -57,5 +104,5 @@ def update():
         stand()
 
     apple.fall()
-
+"""
 
