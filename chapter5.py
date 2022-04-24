@@ -130,19 +130,27 @@ length = int(length)
 drawPolygon(0, 150, vertex, length)
 """
 
+penup()
+goto(0, -300)
+pendown()
+circle(300)
+
 import numpy as np
 
-vertex = 50
-radius = 200
+def drawInscribedPolygon(vertex):
 
-penup()
-goto(radius, 0)
-pendown()
+    radius = 300
 
-for i in range(vertex):
-    angle = (360 / vertex) * (i+1)
-    x = radius * np.cos(np.radians(angle))
-    y = radius * np.sin(np.radians(angle))
-    goto(x, y)
+    penup()
+    goto(radius, 0)
+    pendown()
 
+    for i in range(vertex):
+        angle = (360 / vertex) * (i+1)
+        x = radius * np.cos(np.radians(angle))
+        y = radius * np.sin(np.radians(angle))
+        goto(x, y)
 
+vertex = input("頂点数を入力してください >>")
+vertex = int(vertex)
+drawInscribedPolygon(vertex)
