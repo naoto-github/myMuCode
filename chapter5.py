@@ -130,10 +130,12 @@ length = int(length)
 drawPolygon(0, 150, vertex, length)
 """
 
+"""
 penup()
 goto(0, -300)
 pendown()
 circle(300)
+"""
 
 import numpy as np
 
