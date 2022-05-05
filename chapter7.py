@@ -81,6 +81,6 @@ penup()
 goto(-200, 0)
 pendown()
 
-n = 2 # 次数
+n = 3 # 次数
 length = 400 # 直線の長さ
 koch(n, length)

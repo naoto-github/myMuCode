@@ -4,6 +4,7 @@ WIDTH = 640 # ウィンドウの幅
 HEIGHT = 480 # ウィンドウの高さ
 flg = False
 
+"""
 class Apple:
 
 	# コンストラクタ（引数で値を設定）
@@ -31,15 +32,17 @@ def draw():
     apple2.paint()
 
 def update():
-    if flg:
-        apple1.fall()
-        apple2.fall()
+    apple1.fall()
+    apple2.fall()
+"""
 
+
+"""
 def on_mouse_down():
     global flg
     flg = True
-
 """
+
 class Apple:
 
     def __init__(self, x, y, speed, color, radius):
@@ -81,19 +84,16 @@ for i in range(100):
 def draw():
     screen.fill("white")
 
-    if flg:
-        for apple in apple_list:
-
-            if random() < 0.001:
-                apple.visible = True
-
-            apple.paint()
+    for apple in apple_list:
+        if random() < 0.001:
+            apple.visible = True
+        apple.paint()
 
 def update():
-    if flg:
-        for apple in apple_list:
-            apple.fall()
+    for apple in apple_list:
+        apple.fall()
 
+"""
 def on_mouse_down():
     global flg
     flg = True
