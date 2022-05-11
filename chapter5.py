@@ -1,6 +1,6 @@
 # Turtleグラフィックスのライブラリをインポート
 from turtle import *
-import math
+import numpy as np
 
 """
 print(type(10))
@@ -59,18 +59,20 @@ circle(radius)
 """
 
 """
-print(math.pi)
+print(np.pi)
 
 def calcArea():
     radius = 3
-    area = radius ** 2 * math.pi
+    area = radius ** 2 * np.pi
     print(area)
 
 calcArea()
+"""
 
+"""
 # 関数を定義
 def calcArea(radius):
-	area = radius ** 2 * math.pi # 半径*半径*円周率
+	area = radius ** 2 * np.pi # 半径*半径*円周率
 	print(area)
 	
 # 関数の呼び出し
@@ -78,7 +80,7 @@ calcArea(5) # -> 28.274333882308138
 
 # 関数を定義
 def calcArea(radius):
-	area = radius ** 2 * math.pi
+	area = radius ** 2 * np.pi
 	return area
 	
 # 関数の呼び出し
@@ -137,7 +139,13 @@ pendown()
 circle(300)
 """
 
-import numpy as np
+"""
+print(np.cos(np.radians(45))) # 余弦 -> 0.0
+print(np.sin(np.radians(45))) # 正弦 -> 1.0
+
+print(np.cos(np.radians(90))) # 余弦 -> 0.0
+print(np.sin(np.radians(90))) # 正弦 -> 1.0
+"""
 
 def drawInscribedPolygon(vertex):
 

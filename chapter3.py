@@ -23,12 +23,14 @@ for index in range(len(xlist)):
 	goto(xlist[index], ylist[index]+100)
 """
 
+"""
 scores = [80, 70, 90, 50, 80]
 total = 0 # 得点の合計
 
 for data in scores:
     total = total + data
     print(total)
+"""
 
 """
 penup()
@@ -42,13 +44,12 @@ for angle in range(360):
     goto(x, y)
 """
 
-"""
+speed(0)
 distance = 10
 for index in range(50):
     distance = distance + 10
     forward(distance)
     right(90)
-"""
 
 """
 # リスト
