@@ -78,7 +78,7 @@ target_x = 0
 target_y = 0
 
 # タートルの速度
-speed = 20
+speed = 50
 
 # ターゲットの更新
 def setTarget(x, y):
@@ -86,9 +86,30 @@ def setTarget(x, y):
     global speed
     target_x = x
     target_y = y
-    speed = 20
+    speed = speed
 
 onscreenclick(setTarget)
+
+def setRed():
+    color("red")
+    print(color())
+
+def setGreen():
+    color("green")
+
+def setBlue():
+    color("blue")
+
+def resetPosition():
+    global target_x, target_y # グローバル変数
+    target_x = 0
+    target_y = 0
+
+onkeypress(setRed, "r")
+onkeypress(setGreen, "g")
+onkeypress(setBlue, "b")
+onkeypress(resetPosition, "space")
+listen()
 
 # ターゲットを追いかける
 def chase():
@@ -98,7 +119,7 @@ def chase():
     if(distance(target_x, target_y) > speed):
         angle = towards(target_x, target_y) # 目的方向の角度を算出
         setheading(angle)
-        speed = speed + 10
+        #speed = speed + 10
         forward(speed)
     else:
         setposition(target_x, target_y)
