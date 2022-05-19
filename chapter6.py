@@ -73,26 +73,29 @@ def random_move():
 ontimer(random_move, 2000) # 2000ms後に実行
 """
 
+def random_move():
+    angle = randint(0, 359) # ランダムに角度を設定
+    setheading(angle)
+    forward(100)
+    ontimer(random_move, 2000) # 2000ms後に実行
+
+random_move()
+
+"""
 # ターゲットの座標
 target_x = 0
 target_y = 0
 
-# タートルの速度
-speed = 50
-
 # ターゲットの更新
 def setTarget(x, y):
     global target_x, target_y # グローバル変数
-    global speed
     target_x = x
     target_y = y
-    speed = speed
 
 onscreenclick(setTarget)
 
 def setRed():
     color("red")
-    print(color())
 
 def setGreen():
     color("green")
@@ -113,17 +116,16 @@ listen()
 
 # ターゲットを追いかける
 def chase():
-    global target_x, target_y # グローバル変数
-    global speed
+
     # ターゲットまでの距離が20より大きいとき
-    if(distance(target_x, target_y) > speed):
+    if(distance(target_x, target_y) > 20):
         angle = towards(target_x, target_y) # 目的方向の角度を算出
         setheading(angle)
-        #speed = speed + 10
-        forward(speed)
+        forward(20)
     else:
         setposition(target_x, target_y)
 
     ontimer(chase, 200) # 200msごとにchase()を呼び出す
 
 chase()
+"""
