@@ -1,7 +1,9 @@
+# -*- coding: cp932 -*-
+
 from random import *
 
-WIDTH = 640 # ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å¹…
-HEIGHT = 480 # ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+WIDTH = 640 # ƒEƒBƒ“ƒhƒE‚Ì•
+HEIGHT = 480 # ƒEƒBƒ“ƒhƒE‚Ì‚‚³
 
 def draw():
     screen.fill("white")
@@ -9,13 +11,13 @@ def draw():
     screen.blit("tree1", (0, 0))
     screen.blit("tree2", (300, 0))
 
-    for i in range(10):
+    for i in range(3):
         x = randint(100, 240)
         y = randint(60, 200)
         screen.draw.filled_circle((x, y), 10, (255, 0, 0))
         screen.draw.line((x, y-5), (x, y-15), (0, 0, 0))
 
-    for i in range(10):
+    for i in range(3):
         x = randint(400, 540)
         y = randint(60, 200)
         screen.draw.filled_circle((x, y), 10, (255, 255, 0))
@@ -81,7 +83,7 @@ def update():
 """
 
 """
-# 60fpsã§æ›´æ–°
+# 60fps‚ÅXV
 def update():
     global x, y
     x = x + 1
@@ -89,28 +91,28 @@ def update():
 
 """
 def draw():
-    # èƒŒæ™¯è‰²ãŒç™½ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³
+    # ”wŒiF‚ª”’‚ÌƒXƒNƒŠ[ƒ“
     screen.fill("white")
 
-    # å§‹ç‚¹(50, 50)ã‹ã‚‰çµ‚ç‚¹(200, 50)ã«é»’è‰²ã®ç›´ç·šã‚’æã
+    # n“_(50, 50)‚©‚çI“_(200, 50)‚É•F‚Ì’¼ü‚ğ•`‚­
     screen.draw.line((50, 50), (200, 50), "black")
 
-    # å·¦ä¸Šã®åº§æ¨™(50, 150)ï¼Œå¹…100ï¼Œé«˜ã•100ã®èµ¤è‰²ã®æ­£æ–¹å½¢ã‚’æã
+    # ¶ã‚ÌÀ•W(50, 150)C•100C‚‚³100‚ÌÔF‚Ì³•ûŒ`‚ğ•`‚­
     screen.draw.rect(Rect((50, 150), (100, 100)), "red")
 
-    # å·¦ä¸Šã®åº§æ¨™(50, 300)ï¼Œå¹…100ï¼Œé«˜ã•100ï¼Œç·‘è‰²ã®å¡—ã‚Šã¤ã¶ã—ã®æ­£æ–¹å½¢ã‚’æã
+    # ¶ã‚ÌÀ•W(50, 300)C•100C‚‚³100C—ÎF‚Ì“h‚è‚Â‚Ô‚µ‚Ì³•ûŒ`‚ğ•`‚­
     screen.draw.filled_rect(Rect((50, 300), (100, 100)), "green")
 
-    # ä¸­å¿ƒ(300, 150)ï¼ŒåŠå¾„50ï¼Œé’è‰²ã®æ­£æ–¹å½¢ã‚’æã
+    # ’†S(300, 150)C”¼Œa50CÂF‚Ì³•ûŒ`‚ğ•`‚­
     screen.draw.circle((300, 150), 50, "blue")
 
-    # ä¸­å¿ƒ(300, 300)ï¼ŒåŠå¾„50ï¼Œé»„è‰²ã®å¡—ã‚Šã¤ã¶ã—ã®æ­£æ–¹å½¢ã‚’æã
+    # ’†S(300, 300)C”¼Œa50C‰©F‚Ì“h‚è‚Â‚Ô‚µ‚Ì³•ûŒ`‚ğ•`‚­
     screen.draw.filled_circle((300, 300), 50, "yellow")
 
-    # å·¦ä¸Šã®åº§æ¨™(400, 150)ï¼Œãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º24ï¼Œé»’è‰²ã®æ–‡å­—åˆ—ã€ŒABCã€ã‚’æã
+    # ¶ã‚ÌÀ•W(400, 150)CƒtƒHƒ“ƒgƒTƒCƒY24C•F‚Ì•¶š—ñuABCv‚ğ•`‚­
     #screen.draw.text("ABC", (400, 150), color="black")
 
-    # å·¦ä¸Šã®åº§æ¨™(400, 300)ï¼Œãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º32ï¼Œé»’è‰²ã®æ–‡å­—åˆ—ã€Œã‚ã„ã†ã€ã‚’æã
-    # IPAexãƒ•ã‚©ãƒ³ãƒˆ https://moji.or.jp/ipafont/
-    #screen.draw.text("ã‚ã„ã†", (400, 300), fontname="ipaexg", color="black", fontsize=32)
+    # ¶ã‚ÌÀ•W(400, 300)CƒtƒHƒ“ƒgƒTƒCƒY32C•F‚Ì•¶š—ñu‚ ‚¢‚¤v‚ğ•`‚­
+    # IPAexƒtƒHƒ“ƒg https://moji.or.jp/ipafont/
+    #screen.draw.text("‚ ‚¢‚¤", (400, 300), fontname="ipaexg", color="black", fontsize=32)
 """
