@@ -114,3 +114,12 @@ def draw():
     # IPAexフォント https://moji.or.jp/ipafont/
     #screen.draw.text("あいう", (400, 300), fontname="ipaexg", color="black", fontsize=32)
 """
+
+import pygame
+import sys
+
+def save():
+    pygame.image.save(screen.surface, "test.png")
+    sys.exit()
+
+clock.schedule(save, 3)
