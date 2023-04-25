@@ -44,12 +44,14 @@ for angle in range(360):
     goto(x, y)
 """
 
+"""
 speed(0)
 distance = 10
 for index in range(50):
     distance = distance + 10
     forward(distance)
     right(90)
+"""
 
 """
 # リスト
@@ -181,5 +183,19 @@ print(y) # -> 400
 print(f"x={x} y={y}") # -> x=200 y=400
 """
 
+speed(0)
+distance = 0
+for i in range(20):
 
+    pensize(i)
+
+    color("red")
+    distance = distance + 10
+    forward(distance)
+    right(90)
+
+    color("blue")
+    distance = distance + 10
+    forward(distance)
+    right(90)
 
